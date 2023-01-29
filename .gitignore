@@ -29,4 +29,5 @@ hs_err_pid*
 *.iml
 out/
 
-*/target/
+
+/nacos-spring-cloud-example/nacos-spring-cloud-config-example/target/
