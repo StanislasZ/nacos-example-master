@@ -10,8 +10,14 @@
     </parent>
 
     <properties>
-        <spring-boot.version>2.0.4.RELEASE</spring-boot.version>
-        <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+        <!-- 原对应关系 -->
+<!--        <spring-boot.version>2.0.4.RELEASE</spring-boot.version>-->
+<!--        <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>-->
+
+        <!-- 尝试提高版本 -->
+        <spring-boot.version>2.3.2.RELEASE</spring-boot.version>
+        <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
+        <spring-cloud-alibaba.version>2.2.5.RELEASE</spring-cloud-alibaba.version>
 
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -28,6 +34,11 @@
         <module>nacos-spring-cloud-discovery-example</module>
     </modules>
 
+
+    <!-- 方便多模块管理，这里仅指定版本，若子模块不引入相关依赖，是不会自动引入的；
+            若子模块引入，且没写版本号，则使用这里的版本号
+            若子模块引入，且写了版本号，则使用子模块里的版本号
+     -->
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -37,6 +48,9 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+
+
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -44,6 +58,17 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+
+
         </dependencies>
     </dependencyManagement>
 </project>

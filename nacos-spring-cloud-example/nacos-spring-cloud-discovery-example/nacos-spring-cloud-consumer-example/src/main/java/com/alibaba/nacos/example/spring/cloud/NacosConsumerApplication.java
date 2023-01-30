@@ -39,6 +39,7 @@ public class NacosConsumerApplication {
 
         @RequestMapping(value = "/echo/{str}", method = RequestMethod.GET)
         public String echo(@PathVariable String str) {
+            System.out.println("consumer.... into echo...  str = " + str);
             return restTemplate.getForObject("http://service-provider/echo/" + str, String.class);
         }
     }

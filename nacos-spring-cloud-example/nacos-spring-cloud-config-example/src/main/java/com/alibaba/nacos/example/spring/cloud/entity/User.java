@@ -17,11 +17,18 @@ public class User implements InitializingBean, DisposableBean {
 
     private int age;
 
+
+    private String name2;
+
+    private int age2;
+
     @Override
     public String toString() {
         return "User{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
+                ", name2='" + name2 + '\'' +
+                ", age2=" + age2 +
                 '}';
     }
 

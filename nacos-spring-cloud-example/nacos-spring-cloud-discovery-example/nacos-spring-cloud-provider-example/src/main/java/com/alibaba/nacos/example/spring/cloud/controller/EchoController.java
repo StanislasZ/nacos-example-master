@@ -10,6 +10,7 @@ public class EchoController {
 
     @RequestMapping(value = "/echo/{string}", method = RequestMethod.GET)
     public String echo(@PathVariable String string) {
+        System.out.println("provider...  into echo...  param = " + string);
         return "Hello Nacos Discovery " + string;
     }
 }
