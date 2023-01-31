@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class EchoController {
 
-    @RequestMapping(value = "/echo/{string}", method = RequestMethod.GET)
-    public String echo(@PathVariable String string) {
-        System.out.println("provider...  into echo...  param = " + string);
-        return "Hello Nacos Discovery " + string;
+    @RequestMapping(value = "/echo/{message}", method = RequestMethod.GET)
+    public String echo(@PathVariable String message) {
+        System.out.println("provider...  into echo...  param = " + message);
+        return "Hello Nacos Discovery " + message;
     }
+
+
 }
